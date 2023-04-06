@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
- * is_printable - Evaluates if a char is printable
- * @c: Char to be evaluated.
- *
- * Return: 1 if c is printable, 0 otherwise
- */
+
+* is_printable - Determines whether a given character
+* @c: The character to be evaluated.
+*/
+
 int is_printable(char c)
 {
     switch (c) {
@@ -17,16 +17,17 @@ int is_printable(char c)
 }
 
 /**
- * append_hexa_code - Append ascci in hexadecimal code to buffer
- * @buffer: Array of chars.
- * @i: Index at which to start appending.
- * @ascii_code: ASSCI CODE.
- * Return: Always 3
- */
+
+* append_hexa_code - Appends the ASCII code of a character in hexadecimal format 
+* @buffer: The array of characters to which the ASCII code 
+* @i: The index at which to start appending.
+*@ascii_code: The ASCII code of the character to be appended.
+*/
+
 int append_hexa_code(char ascii_code, char buffer[], int i)
 {
     char map_to[] = "0123456789ABCDEF";
-    /* The hexa format code is always 2 digits long */
+    
     if (ascii_code < 0)
         ascii_code *= -1;
 
@@ -39,11 +40,11 @@ int append_hexa_code(char ascii_code, char buffer[], int i)
 }
 
 /**
- * is_digit - Verifies if a char is a digit
- * @c: Char to be evaluated
- *
- * Return: 1 if c is a digit, 0 otherwise
- */
+
+* is_digit - Determines whether a given character is a digit or not.
+* @c: The character to be evaluated.
+*/
+
 int is_digit(char c)
 {
     switch (c) {
@@ -55,12 +56,12 @@ int is_digit(char c)
 }
 
 /**
- * convert_size_number - Casts a number to the specified size
- * @num: Number to be casted.
- * @size: Number indicating the type to be casted.
- *
- * Return: Casted value of num
- */
+
+* convert_size_number - Converts a given number to a specified data type of a certain size.
+* @num: The number to be converted.
+* @size: The size of the data type to which @num should be converted.
+
+*/
 long int convert_size_number(long int num, int size)
 {
     switch (size) {
@@ -80,6 +81,7 @@ long int convert_size_number(long int num, int size)
  *
  * Return: Casted value of num
  */
+
 unsigned long int convert_size_unsgnd(unsigned long int num, int size)
 {
     switch (size) {
