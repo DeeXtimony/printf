@@ -1,44 +1,33 @@
 #include "main.h"
 
-/************************* PRINT A CHARACTER *************************/
-
 /**
 
-print_character - Prints a single character
-@args: List of arguments
-@buffer: Buffer array to handle print
-@flags: Calculates active flags
-@width: Width
-@precision: Precision specification
-@size: Size specifier
-Return: Number of characters printed
+* print_character - Prints a single character
+* @args: List of arguments containing the character
+* @buffer: Buffer array used for printing
+* @flags: Flags that affect the printing behavior
+* @width: Minimum width of the printed character 
+* @precision: Not used in this function
+* @size: Size specifier
 */
+
 int print_character(va_list args, char buffer[],
 int flags, int width, int precision, int size)
 {
 char c = va_arg(args, int);
 return (handle_write_char(c, buffer, flags, width, precision, size));
 }
-/************************* PRINT A STRING *************************/
 
 /**
-
-print_string - Prints a string
-
-@args: List of arguments
-
-@buffer: Buffer array to handle print
-
-@flags: Calculates active flags
-
-@width: Width
-
-@precision: Precision specification
-
-@size: Size specifier
-
-Return: Number of characters printed
+* print_string - Prints a string
+* @args: List of arguments containing the string 
+* @buffer: Buffer array used for printing
+* @flags: Flags that affect the printing behavior 
+* @width: Minimum width of the printed string 
+* @precision: Maximum number of characters to be printed 
+* @size: Size specifier
 */
+
 int print_string(va_list args, char buffer[],
 int flags, int width, int precision, int size)
 {
@@ -90,18 +79,17 @@ return (width);
 
 return (write(1, str, length));
 }
-/************************* PRINT PERCENT SIGN ***********************/
-/
+/**
 
-print_percent - Prints a percent sign
-@args: List of arguments
-@buffer: Buffer array to handle print
-@flags: Formatting flags
-@width: Minimum field width
-@precision: Precision specifier
-@length: Length modifier
-Return: Number of characters printed
+* print_percent - Prints a percent sign
+* @args: List of arguments
+* @buffer: Buffer array used for printing
+* @flags: Flags that affect the printing behavior
+* @width: Minimum width of the printed percent sign
+* @precision: Minimum number of characters to be printed
+* @length: Length modifier
 */
+
 int print_percent(va_list args, char buffer[], int flags, int width,
 int precision, int length)
 {
@@ -112,25 +100,18 @@ UNUSED(precision);
 UNUSED(length);
 return (write(1, "%", 1));
 }
-/************************* PRINT INTEGER ***********************/
-/
+/**
 
-print_int - Print an integer
+* print_int - Printing an integer
+* @args: List of arguments containing the integer
+* @buffer: Buffer array used for printing
+* @flags: Flags that affect the printing behavior
+* @width: Minimum width of the printed integer
+* @precision: Minimum number of digits to be printed 
+* @length: Length modifier 
 
-@args: List of arguments
-
-@buffer: Buffer array to handle print
-
-@flags: Formatting flags
-
-@width: Minimum field width
-
-@precision: Precision specifier
-
-@length: Length modifier
-
-Return: Number of characters printed
 */
+
 int print_int(va_list args, char buffer[], int flags, int width,
 int precision, int length)
 {
