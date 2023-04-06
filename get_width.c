@@ -1,3 +1,4 @@
+#include<main.h>
 /**
  * get_precision - Calculates the precision for printing
  * @format: Formatted string in which to print the arguments
@@ -11,11 +12,9 @@ int get_precision(const char *format, int *i, va_list list)
         int curr_i = *i + 1;
         int precision = -1;
 
-        // Check if the next character is a period.
         if (format[curr_i] == '.') {
                 precision = 0;
 
-                // Parse the precision value.
                 while (format[++curr_i] != '\0') {
                         switch (format[curr_i]) {
                                 case '*':
