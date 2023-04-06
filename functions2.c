@@ -1,16 +1,16 @@
 #include "main.h"
 
-/****************** PRINT POINTER ******************/
 /**
- * print_pointer - Prints the value of a pointer variable
- * @types: List a of arguments
- * @buffer: Buffer array to handle print
- * @flags: Calculates active flags
- * @width: get width
- * @precision: Precision specification
- * @size: Size specifier
- * Return: Number of chars printed.
- */
+
+* print_pointer - Prints the value of a pointer variable
+* @types: List of arguments containing the pointer variable to be printed
+* @buffer: Buffer array used for printing
+* @flags: Flags that affect the printing behavior 
+* @width: Minimum width of the printed pointer 
+* @precision: Minimum number of digits to be printed 
+* @size: Size specifier 
+*/
+
 int print_pointer(va_list types, char buffer[],
         int flags, int width, int precision, int size)
 {
@@ -56,22 +56,22 @@ int print_pointer(va_list types, char buffer[],
 
     ind++;
 
-    /* Return the number of characters printed */
+    
     return (write_pointer(buffer, ind, length,
             width, flags, padd, extra_c, padd_start));
 }
 
-/************************* PRINT NON PRINTABLE *************************/
 /**
- * print_non_printable - Prints ascii codes in hexa of non printable chars
- * @types: Lista of arguments
- * @buffer: Buffer array to handle print
- * @flags: Calculates active flags
- * @width: get width
- * @precision: Precision specification
- * @size: Size specifier
- * Return: Number of chars printed
- */
+
+* print_non_printable - Prints ASCII codes in hexadecimal 
+* @types: List of arguments in string
+* @buffer: Buffer array used for printing
+* @flags: Flags that affect the printing behavior 
+* @width: Minimum width of the printed string 
+* @precision: Maximum number of characters to be printed
+* @size: Size specifier
+*/
+
 int print_non_printable(va_list types, char buffer[],
         int flags, int width, int precision, int size)
 {
@@ -98,21 +98,20 @@ int print_non_printable(va_list types, char buffer[],
 
     buffer[i + offset] = '\0';
 
-    /* Return the number of characters printed */
+    
     return (write(1, buffer, i + offset));
 }
-
-/************************* PRINT REVERSE *************************/
 /**
- * print_reverse_string - Prints reverse string.
- * @types: Lista of arguments
- * @buffer: Buffer array to handle print
- * @flags: Calculates active flags
- * @width: get width
- * @precision: Precision specification
- * @size: Size specifier
- * Return: Numbers of chars printed
- */
+
+* print_reverse_string - Prints a string in reverse order
+* @types: List of arguments containing the string
+* @buffer: Buffer array used for printing
+* @flags: Flags that affect the printing behavior
+* @width: Minimum width of the printed string
+* @precision: Maximum number of characters 
+* @size: Size specifier 
+*/
+
 int print_reverse(va_list types, char buffer[], int flags, int width, int precision, int size)
 {
     char *str;
@@ -148,16 +147,8 @@ int print_reverse(va_list types, char buffer[], int flags, int width, int precis
 
     return count;
 }
-/**
- * print_rot13string - Print a string in rot13.
- * @types: List of arguments
- * @buffer: Buffer array to handle print
- * @flags: Calculates active flags
- * @width: Width specifier
- * @precision: Precision specifier
- * @size: Size specifier
- * Return: Number of characters printed
- */
+
+
 int print_rot13string(va_list types, char buffer[], int flags, int width, int precision, int size)
 {
     char x;
